@@ -1,17 +1,26 @@
 //To Run This JS file use "node cloudGame.js" command in the terminal.
 
-var c = [0, 1, 0, 1, 0, 1, 0]; //Array of 7 Clouds
+var c = [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1]; //Array of clouds
 
 var jumps = 0; //Variable to store number of Jumps
 
+var i = 0;
+
 function runGame(clouds) {
-  for (let index = 0; index < clouds.length; index = index + 2) {
-    //Iterating through the clouds array
-    if (index === 1 || index === 5) {
-      //Condition for checking the index of cloud
-      null;
+  while (i < clouds.length - 1) {
+    //While Loop True till index is one less than clouds array length
+    if (clouds[i + 2] == 0) {
+      //Checks if she can jump two places
+      i += 2;
+      jumps++;
+    } else if (clouds[i + 1] == 0) {
+      //Checks if can jump one place.
+      i++;
+      jumps++;
     } else {
-      jumps++; //Incrementing the Jump counter
+      //Checks if it is the thunderstorm cloud
+      console.log("It is the thunderstorm cloud");
+      break;
     }
   }
 }
