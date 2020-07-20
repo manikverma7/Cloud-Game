@@ -2,4 +2,4 @@
 # Designing Task
 # Compare values of two arrays
 
-<img src="task.PNG">
+<img src="images/task.PNG">
